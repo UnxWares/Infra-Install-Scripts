@@ -49,4 +49,4 @@ echo "Starting newt service..."
 service newt start
 service newt status
 
-echo "Newt successfully installed !"
+echo "Newt successfully installed 🤓 !"
