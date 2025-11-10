@@ -1,6 +1,6 @@
 #!/bin/sh
 
-read -p "Enter newt setup command: " NEWT_SETUP
+read -p "Enter newt setup command: " NEWT_SETUP </dev/tty
 
 if [ ! $NEWT_SETUP newt* ]; then
   echo "Invalid command"
