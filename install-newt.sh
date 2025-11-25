@@ -51,4 +51,19 @@ service newt status
 
 rc-update add newt default
 
+echo "Setting up dns resolution..."
+apk add --no-cache dnsmasq
+cat <<EOF > /etc/dnsmasq.d/new.conf
+server=/iface.infra.unxwares.com/10.127.30.2
+server=9.9.9.9
+EOF
+
+rc-update add dnsmasq default
+service dnsmasq restart
+
+rm -f /etc/resolv.conf
+cat <<EOF > /etc/resolv.conf
+nameserver 127.0.0.1
+EOF
+
 echo "Newt successfully installed 🤓 !"
