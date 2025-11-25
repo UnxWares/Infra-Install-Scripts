@@ -44,9 +44,11 @@ EOF
 
 chmod +x "$NEWT_SERVICE"
 
-echo "Starting newt service..."
+echo "Starting newt service and setuping runlevel..."
 
 service newt start
 service newt status
+
+rc-update add newt default
 
 echo "Newt successfully installed 🤓 !"
